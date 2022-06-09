@@ -7,18 +7,18 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
     console.log(account.address);
   }
 });
-
+const ALCHEMEY_API_KEY = "///";
+const RINKEBY_KEY = "///";
 /**
  * @type import('hardhat/config').HardhatUserConfig
  */
 module.exports = {
   solidity: "0.8.4",
-  paths: {
-    artifacts: "./src/artifacts",
-  },
+
   networks: {
-    hardhat: {
-      chainId: 1337,
+    rinkeby: {
+      url: `${ALCHEMEY_API_KEY}`,
+      account: [`${RINKEBY_KEY}`],
     },
   },
 };
